@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { getDayMonth } from '../../../utils/formatDate'
+import { getCurrentTime } from '../../../utils/formatDate'
 import Marker from './'
 
 const PointerMarker = ({
@@ -14,7 +14,7 @@ const PointerMarker = ({
     highlighted={highlighted}
   >
     <div>
-      <div><strong>{getDayMonth(date)}</strong></div>
+      <div><strong>{getCurrentTime(date)}</strong></div>
     </div>
   </Marker>
 )

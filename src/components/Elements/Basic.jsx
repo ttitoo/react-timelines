@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getDayMonth } from '../../utils/formatDate'
+import { getDayMonth, getCurrentTime } from '../../utils/formatDate'
 import createClasses from '../../utils/classes'
 
 const buildDataAttributes = (attributes = {}) => {
@@ -30,8 +30,8 @@ const Basic = ({
         : (
           <div>
             <div>{title}</div>
-            <div><strong>Start</strong> {getDayMonth(start)}</div>
-            <div><strong>End</strong> {getDayMonth(end)}</div>
+            <div><strong>开始时间</strong> {getCurrentTime(start)}</div>
+            <div><strong>结束时间</strong> {getCurrentTime(end)}</div>
           </div>
         )
       }

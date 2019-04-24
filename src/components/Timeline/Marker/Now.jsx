@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import Marker from './'
-import { getDayMonth } from '../../../utils/formatDate'
+import { getCurrentTime } from '../../../utils/formatDate'
 
 class NowMarker extends PureComponent {
   render() {
@@ -10,8 +10,8 @@ class NowMarker extends PureComponent {
     return (
       <Marker modifier="now" x={time.toX(now)} visible={visible}>
         <div>
-          <div>Today</div>
-          <strong>{getDayMonth(now)}</strong>
+          <div>当前时间</div>
+          <strong>{getCurrentTime(now)}</strong>
         </div>
       </Marker>
     )
