@@ -34,8 +34,8 @@
     "tracks",
     "time"
   ],
-  "repository": "git@github.com:JSainsburyPLC/react-timelines.git",
-  "author": "JSainsburyPLC",
+  "repository": "git@github.com:ttitoo/react-timelines.git",
+  "author": "ttitoo",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.6.1"
