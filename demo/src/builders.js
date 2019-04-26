@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   START_YEAR,
   NUM_OF_YEARS,
@@ -80,10 +81,20 @@ export const buildElement = ({
 }) => {
   const bgColor = nextColor()
   const color = colourIsLight(...hexToRgb(bgColor)) ? '#000000' : '#ffffff'
+  const title = randomTitle()
   return (
     {
       id: `t-${trackId}-el-${i}`,
-      title: randomTitle(),
+      title,
+      icon: <a href="#">icon</a>,
+      tooltip: (
+        <div>
+          <div>{title}</div>
+          <div><strong>开始时间</strong> start from</div>
+          <div><strong>结束时间</strong> stop to</div>
+          <div><strong>缺席</strong> 2</div>
+        </div>
+      ),
       start,
       end,
       style: {
