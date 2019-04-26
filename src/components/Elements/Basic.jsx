@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getDayMonth, getCurrentTime } from '../../utils/formatDate'
+import { getCurrentTime } from '../../utils/formatDate'
 import createClasses from '../../utils/classes'
 
 const buildDataAttributes = (attributes = {}) => {
@@ -12,7 +12,7 @@ const buildDataAttributes = (attributes = {}) => {
 }
 
 const Basic = ({
-  title, start, end, style, classes, dataSet, tooltip
+  title, start, end, style, classes, dataSet, tooltip, icon
 }) => (
   <div
     className={createClasses('rt-element', classes)}
@@ -21,13 +21,13 @@ const Basic = ({
   >
     <div className="rt-element__content" aria-hidden="true">
       <span className="rt-element__title">{ title }</span>
+      { icon }
     </div>
     <div className="rt-element__tooltip">
       {
         tooltip
         // eslint-disable-next-line react/no-danger
-        ? <div dangerouslySetInnerHTML={{ __html: tooltip.split('\n').join('<br>') }} />
-        : (
+        ? tooltip : (
           <div>
             <div>{title}</div>
             <div><strong>开始时间</strong> {getCurrentTime(start)}</div>
@@ -41,12 +41,13 @@ const Basic = ({
 
 Basic.propTypes = {
   title: PropTypes.string.isRequired,
+  icon: PropTypes.element,
   start: PropTypes.instanceOf(Date).isRequired,
   end: PropTypes.instanceOf(Date).isRequired,
   style: PropTypes.shape({}),
   classes: PropTypes.arrayOf(PropTypes.string.isRequired),
   dataSet: PropTypes.shape({}),
-  tooltip: PropTypes.string
+  tooltip: PropTypes.element
 }
 
 export default Basic
